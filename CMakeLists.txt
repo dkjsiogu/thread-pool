@@ -1,32 +1,38 @@
 cmake_minimum_required(VERSION 3.10)
 project(ThreadPoolTutorial)
 
-# è®¾ç½® C++ æ ‡å‡†
+# ÉèÖÃ C++ ±ê×¼
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# ç¼–è¯‘é€‰é¡¹
+# ±àÒëÑ¡Ïî
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pthread")
 
-# åŒ…å«å¤´æ–‡ä»¶ç›®å½•
+# °üº¬Í·ÎÄ¼şÄ¿Â¼
 include_directories(${PROJECT_SOURCE_DIR}/src)
 
-# ç¬¬ä¸€é˜¶æ®µï¼šåŸºç¡€ç‰ˆæœ¬
+# µÚÒ»½×¶Î£º»ù´¡°æ±¾
 add_executable(step1_basic_threadpool 
     src/step1_basic/main.cpp
 )
 
-# ç¬¬äºŒé˜¶æ®µï¼šæ”¯æŒè¿”å›å€¼
+# µÚ¶ş½×¶Î£ºÖ§³Ö·µ»ØÖµ
 add_executable(step2_with_future 
     src/step2_future/main.cpp
 )
 
-# ç¬¬ä¸‰é˜¶æ®µï¼šå®Œæ•´åŠŸèƒ½ç‰ˆæœ¬
+# µÚÈı½×¶Î£ºÍêÕû¹¦ÄÜ°æ±¾
 add_executable(step3_advanced 
     src/step3_advanced/main.cpp
 )
 
-# æœ€ç»ˆé¡¹ç›®ï¼šå®Œæ•´çš„çº¿ç¨‹æ± åº“
+# ×îÖÕÏîÄ¿£ºÍêÕûµÄÏß³Ì³Ø¿â
 add_executable(final_demo 
     src/final/main.cpp
+)
+
+# Ñ§Ï°ÕßµÄÊµ¼ùÏîÄ¿
+add_executable(my_thread_pool
+    src/main.cpp
+    src/My_test/My_thread_pool.cpp  # Ìí¼ÓÊµÏÖÎÄ¼ş
 )
